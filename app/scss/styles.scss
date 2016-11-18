@@ -22,6 +22,9 @@ $retweetColor: #ACD373;
 }
 
 @mixin transition-effects {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -60,6 +63,7 @@ input, textarea {
     line-height: 2.4em;
     color: $greyBorderColor;
     cursor: pointer;
+    @include transition-effects;
 
     i:first-child{
       color: transparent;
@@ -70,7 +74,6 @@ input, textarea {
 
     &:hover{
       background: $greyBorderColor;
-      @include transition-effects;
     }
   }
 }
@@ -100,11 +103,11 @@ input, textarea {
       line-height: 1em;
       color: $greyInputColor;
       @include grey-border;
+      @include transition-effects;
 
       &:focus{
         border-color: transparent;
         box-shadow: 0 0 2px 1px rgba(128, 186, 236, 0.6);
-        @include transition-effects;
       }
   }
 
@@ -117,10 +120,10 @@ input, textarea {
       border-width: 5px;
       border-color: transparent;
       cursor: pointer;
+      @include transition-effects;
 
       &.active,&:hover{
         border-color: #80BAEC;
-        @include transition-effects;
       }
   }
 
@@ -138,6 +141,7 @@ input, textarea {
 
 .tweet-item{
   @include grey-border;
+  @include transition-effects;
 
   img{
     width: 50px;
@@ -152,7 +156,6 @@ input, textarea {
 
   &:hover{
     background-color: #F5F5F5;
-    @include transition-effects;
   }
 }
 
@@ -173,25 +176,22 @@ input, textarea {
   span{
     color: $baseTextColorLite;
     cursor: pointer;
+    @include transition-effects;
 
     &:hover{
       color: $baseTextColor;
-      @include transition-effects;
     }
 
     &.reply:hover{
       color: #0084B4;
-      @include transition-effects;
     }
 
     &.star:hover{
       color: $starColor;
-      @include transition-effects;
     }
 
     &.retweet:hover{
       color: $retweetColor;
-      @include transition-effects;
     }
 
     &.star.isFav {
