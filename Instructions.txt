@@ -1,0 +1,11 @@
+Designing the attached UI using HTML5 and CSS3. You may only use Basscss framework and Font Awesome icons.
+
+Bonus points:
+
+--If you make use of Flexbox for creating the layout
+--Use SASS for coding CSS
+--Use Webpack / Gulp to automate build process if required.
+--Create the tweets dynamically using JSON (can be hard coded in JavaScript, no need to implement a backend) and make use of
+any JavaScript framework of your choice (using jQuery with design patterns is equally good).
+--Make the page responsive.
+--Add CSS animations wherever you want to.

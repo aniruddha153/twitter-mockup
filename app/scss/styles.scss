@@ -1,0 +1,201 @@
+$greyBorderColor: #EBE7E0;
+$greyInputColor: #C7C7C7;
+$baseTextColor: #605E58;
+$baseTextColorLite: #C6C1B0;
+$starColor: #FFAA00;
+$retweetColor: #ACD373;
+
+@mixin font-openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin grey-border {
+  border:{
+    color: $greyBorderColor;
+  }
+}
+
+@mixin wrapper-shadow{
+  box:{
+    shadow: 0 1px 2px 1px rgba(0,0,0,0.07);
+  }
+}
+
+@mixin transition-effects {
+  transition: all 0.3s ease-in-out;
+}
+
+body { background: #F2EEE8; @include font-openSans; color: $baseTextColor; }
+
+input, textarea {
+  @include font-openSans;
+  box-shadow: none;
+  outline: none;
+}
+
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+  color: $greyInputColor;
+}
+
+@media (min-width: 990px){
+  .container {
+    width: 800px;
+  }
+}
+
+.logo{
+  cursor: pointer;
+  @include grey-border;
+}
+
+.page-header{
+  @include wrapper-shadow;
+}
+
+.social-media-icons:not(.logo){
+
+  span.fa-stack{
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.4em;
+    color: $greyBorderColor;
+    cursor: pointer;
+
+    i:first-child{
+      color: transparent;
+    }
+    i:not(:first-child){
+      color: $baseTextColor;
+    }
+
+    &:hover{
+      background: $greyBorderColor;
+      @include transition-effects;
+    }
+  }
+}
+
+.searchbar{
+  width: 50%;
+
+  .fa-search {
+    font-size: 1.1em;
+  }
+}
+
+.right-innericon-addon {
+  color: $greyInputColor;
+
+  span {
+    right: 0;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  input {
+      border-radius: 1.4em;
+      width: 100%;
+      height: 2.6em;
+      font-size: 1em;
+      line-height: 1em;
+      color: $greyInputColor;
+      @include grey-border;
+
+      &:focus{
+        border-color: transparent;
+        box-shadow: 0 0 2px 1px rgba(128, 186, 236, 0.6);
+        @include transition-effects;
+      }
+  }
+
+}
+
+.stats-card-wrapper{
+  @include wrapper-shadow;
+
+  .stat-card{
+      border-width: 5px;
+      border-color: transparent;
+      cursor: pointer;
+
+      &.active,&:hover{
+        border-color: #80BAEC;
+        @include transition-effects;
+      }
+  }
+
+  .h4{
+    color: $baseTextColorLite;
+  }
+  .h3{
+    color: $baseTextColor;
+  }
+}
+
+.tweets-wrapper{
+  @include wrapper-shadow;
+}
+
+.tweet-item{
+  @include grey-border;
+
+  img{
+    width: 50px;
+    height: 50px;
+  }
+  span.fullname{
+    font-size: 1.1em;
+  }
+  span.username, span.time{
+    color: $baseTextColorLite;
+  }
+
+  &:hover{
+    background-color: #F5F5F5;
+    @include transition-effects;
+  }
+}
+
+.tweet-header{
+    span.fullname{
+      i{
+        display: none;
+
+        &.isRetweet{
+          display: inline-block;
+          color: $retweetColor;
+        }
+      }
+    }
+}
+
+.tweet-footer{
+  span{
+    color: $baseTextColorLite;
+    cursor: pointer;
+
+    &:hover{
+      color: $baseTextColor;
+      @include transition-effects;
+    }
+
+    &.reply:hover{
+      color: #0084B4;
+      @include transition-effects;
+    }
+
+    &.star:hover{
+      color: $starColor;
+      @include transition-effects;
+    }
+
+    &.retweet:hover{
+      color: $retweetColor;
+      @include transition-effects;
+    }
+
+    &.star.isFav {
+      color: $starColor;
+    }
+  }
+}

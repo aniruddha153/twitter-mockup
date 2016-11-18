@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Directi Twitter Feed UI Mockup</title>
+    <meta charset="UTF-8">
+    <!--BassCss/AceCss Comprises of all optional modules-->
+    <link rel="stylesheet" href="app/css/ace.min.css">
+    <!--FontAwesome Icons-->
+    <link rel="stylesheet" href="app/font-awesome/css/font-awesome.min.css">
+    <!--GoogleFonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!--Custom Stylesheets-->
+    <link rel="stylesheet" href="app/css/styles.css">
+  </head>
+
+  <body>
+    <div class="sm-flex flex-wrap bg-white items-center page-header">
+      <div class="sm-col sm-col-12 md-col-5 lg-col-4 sm-hide xs-hide social-media">
+        <ul class="list-reset m0">
+          <li class="inline-block mr2 p2 border-right social-media-icons logo">
+            <span class="fa-stack fa-lg blue muted">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-deviantart fa-stack-1x fa-inverse"></i>
+            </span>
+          </li>
+          <li class="inline-block mr1 p1 social-media-icons">
+            <span class="fa-stack border circle">
+              <i class="fa fa-circle-thin fa-stack-2x"></i>
+              <i class="fa fa-bell fa-stack-1x"></i>
+            </span>
+          </li>
+          <li class="inline-block mr1 p1 social-media-icons">
+            <span class="fa-stack border circle">
+              <i class="fa fa-circle-thin fa-stack-2x"></i>
+              <i class="fa fa-envelope-o fa-stack-1x"></i>
+            </span>
+          </li>
+          <li class="inline-block mr1 p1 social-media-icons">
+            <span class="fa-stack border circle">
+              <i class="fa fa-circle-thin fa-stack-2x"></i>
+              <i class="fa fa-hashtag fa-stack-1x"></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="sm-col sm-col-6 md-col-2 lg-col-4 center">
+        <i class="fa fa-twitter fa-2x mx-auto blue muted"></i>
+      </div>
+      <div class="sm-col sm-col-6 md-col-5 lg-col-4 clearfix">
+        <img class="circle right mr2" src="app/images/avatar1.jpg" width="40" height="40" />
+        <div class="right-innericon-addon relative searchbar right mr2">
+          <span class="absolute fa fa-search fa-lg pr2"></span>
+          <input type="text" id="searchBar" class="pl2 block bg-white border" placeholder="Search" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container px2 mx-auto">
+      <div class="sm-flex flex-wrap items-center center my3 mxn2 bg-white stats-card-wrapper">
+        <div class="sm-col sm-col-3 md-col-3 border-box p2 border-bottom stat-card active"><span class="h4 block gray">TWEETS</span><span class="h3 bold block">200</span></div>
+        <div class="sm-col sm-col-3 md-col-3 border-box p2 border-bottom stat-card"><span class="h4 block">PHOTOS/VIDEOS</span><span class="h3 bold block">157</span></div>
+        <div class="sm-col sm-col-3 md-col-3 border-box p2 border-bottom stat-card"><span class="h4 block">FOLLOWING</span><span class="h3 bold block">2.3K</span></div>
+        <div class="sm-col sm-col-3 md-col-3 border-box p2 border-bottom stat-card"><span class="h4 block">FOLLOWERS</span><span class="h3 bold block">1M</span></div>
+      </div>
+
+      <div id="tweetsContainer" class="sm-flex flex-wrap items-center mb3 mxn2 tweets-wrapper">
+         <script id="entry-template" type="text/x-handlebars-template">
+           {{#each this}}
+           <div class="sm-col sm-col-12 md-col-12 border-box border-bottom p3 bg-white tweet-item">
+              <div class="flex">
+                 <img src="{{avatar_url}}" class="flex-none circle mr2" />
+                 <div class="flex-auto">
+                   <div class="tweet-header mb1">
+                     <span class="fullname bold"><i class="fa fa-refresh {{tweet.isRetweet}} mr1"></i> {{fullname}}</span>
+                     <span class="username"> {{username}}</span>
+                     <span class="right time">{{tweet.tweet_time}}</span>
+                   </div>
+                   <p class="m0">{{tweet.text}}</p>
+                   {{#if tweet.video_url}}
+                   <div class="tweet-media mt1">
+                     <video controls="" autoplay="" loop name="media" width="100%" height="auto"><source src="{{tweet.video_url}}" type="video/mp4"></video>
+                   </div>
+                   {{/if}}
+                   <div class="tweet-footer mt2">
+                     <span class="py1 pr1 mr1 reply"><i class="fa fa-share"></i></span>
+                     <span class="p1 mr1 star {{tweet.favorite}}"><i class="fa fa-star"></i></span>
+                     <span class="p1 mr1 retweet"><i class="fa fa-refresh"></i> {{tweet.retweet_count}}</span>
+                     <span class="p1 mr1 more"><i class="fa fa-ellipsis-h"></i></span>
+                     <span class="p1 mxn1 right expand"><i class="fa fa-expand"></i></span>
+                   </div>
+                 </div>
+               </div>
+           </div>
+           {{/each}}
+         </script>
+       </div>
+    </div>
+
+    <script src="app/js/jquery-3.1.0.min.js"></script>
+    <script src="app/js/handlebars-v4.0.5.js"></script>
+    <script src="app/js/main.js"></script>
+
+    <!--Uncomment line below if app loaded without a server-->
+    <!-- <script src="app/js/main-offline.js"></script> -->
+  </body>
+</html>
