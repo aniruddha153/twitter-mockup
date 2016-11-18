@@ -27,14 +27,17 @@ input, textarea {
   height: 2.5em;
   line-height: 2.4em;
   color: #EBE7E0;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
   .social-media-icons:not(.logo) span.fa-stack i:first-child {
     color: transparent; }
   .social-media-icons:not(.logo) span.fa-stack i:not(:first-child) {
     color: #605E58; }
   .social-media-icons:not(.logo) span.fa-stack:hover {
-    background: #EBE7E0;
-    transition: all 0.3s ease-in-out; }
+    background: #EBE7E0; }
 
 .searchbar {
   width: 50%; }
@@ -54,21 +57,27 @@ input, textarea {
     font-size: 1em;
     line-height: 1em;
     color: #C7C7C7;
-    border-color: #EBE7E0; }
+    border-color: #EBE7E0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
     .right-innericon-addon input:focus {
       border-color: transparent;
-      box-shadow: 0 0 2px 1px rgba(128, 186, 236, 0.6);
-      transition: all 0.3s ease-in-out; }
+      box-shadow: 0 0 2px 1px rgba(128, 186, 236, 0.6); }
 
 .stats-card-wrapper {
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.07); }
   .stats-card-wrapper .stat-card {
     border-width: 5px;
     border-color: transparent;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
     .stats-card-wrapper .stat-card.active, .stats-card-wrapper .stat-card:hover {
-      border-color: #80BAEC;
-      transition: all 0.3s ease-in-out; }
+      border-color: #80BAEC; }
   .stats-card-wrapper .h4 {
     color: #C6C1B0; }
   .stats-card-wrapper .h3 {
@@ -78,7 +87,11 @@ input, textarea {
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.07); }
 
 .tweet-item {
-  border-color: #EBE7E0; }
+  border-color: #EBE7E0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
   .tweet-item img {
     width: 50px;
     height: 50px; }
@@ -87,8 +100,7 @@ input, textarea {
   .tweet-item span.username, .tweet-item span.time {
     color: #C6C1B0; }
   .tweet-item:hover {
-    background-color: #F5F5F5;
-    transition: all 0.3s ease-in-out; }
+    background-color: #F5F5F5; }
 
 .tweet-header span.fullname i {
   display: none; }
@@ -98,18 +110,18 @@ input, textarea {
 
 .tweet-footer span {
   color: #C6C1B0;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
   .tweet-footer span:hover {
-    color: #605E58;
-    transition: all 0.3s ease-in-out; }
+    color: #605E58; }
   .tweet-footer span.reply:hover {
-    color: #0084B4;
-    transition: all 0.3s ease-in-out; }
+    color: #0084B4; }
   .tweet-footer span.star:hover {
-    color: #FFAA00;
-    transition: all 0.3s ease-in-out; }
+    color: #FFAA00; }
   .tweet-footer span.retweet:hover {
-    color: #ACD373;
-    transition: all 0.3s ease-in-out; }
+    color: #ACD373; }
   .tweet-footer span.star.isFav {
     color: #FFAA00; }
